@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jetpack Compose</string>
+
+    <string name="login">Login US</string>
+    <string name="entrar">Sign In</string>
+    <string name="idioma_pt">Portuguese 🇧🇷</string>
+    <string name="idioma_en">English 🇺🇸</string>
+    <string name="idioma_sistema">System 📱</string>
+</resources>

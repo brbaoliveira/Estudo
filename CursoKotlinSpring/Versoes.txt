@@ -2,5 +2,10 @@
 Versão → 1
 Data → 19/08/2026
 Alterações → Primeira versão → adicionando arquivos de cursos do computador 
-Seção do curso → 4 
+Seção do curso → até a 4 (13/13)
+-----------------------------------------------------------------------------------
+Versão → 2
+Data → 20/08/2026
+Alterações → Continuação do curso
+Seção do curso → 5 (15/15) e 6 (1/3)
 -----------------------------------------------------------------------------------

@@ -1,3 +1,7 @@
 package com.mercadolivro.request
 
-data class PostCustomerRequest (var nome: String, var email: String)
+data class PostCustomerRequest (var name: String, var email: String) {
+    /*fun toCustomerModel(): CustomerModel {
+        return CustomerModel(nome = this.nome, email = this.email)
+    }*/
+}

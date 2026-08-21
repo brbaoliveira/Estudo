@@ -1,5 +1,6 @@
 package com.mercadolivro.controller
 
+import com.mercadolivro.extension.toCustomerModel
 import com.mercadolivro.model.CustomerModel
 import com.mercadolivro.request.PostCustomerRequest
 import com.mercadolivro.request.PutCustomerRequest
@@ -28,23 +29,23 @@ class CustomerController( val custimerService: CustomerService) {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody customer: PostCustomerRequest) {
-        custimerService.create(customer)
+        custimerService.create(customer.toCustomerModel())
     }
 
     @GetMapping("/{id}")
-    fun getCustomer(@PathVariable id : String): CustomerModel {
+    fun getCustomer(@PathVariable id : Int): CustomerModel {
         return custimerService.getCustomer(id)
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun update(@PathVariable id : String, @RequestBody customer: PutCustomerRequest) {
-        return custimerService.update(id, customer)
+    fun update(@PathVariable id : Int, @RequestBody customer: PutCustomerRequest) {
+        return custimerService.update(customer.toCustomerModel(id))
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun delete(@PathVariable id : String) {
+    fun delete(@PathVariable id : Int) {
         custimerService.delete(id)
     }
 

@@ -1,3 +1,21 @@
 package com.mercadolivro.model
 
-data class CustomerModel(var id : String, var nome: String, var email: String)
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+
+@Entity(name = "customer")
+data class CustomerModel(
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id : Int? = null,
+
+    @Column
+    var name: String,
+
+    @Column
+    var email: String
+)

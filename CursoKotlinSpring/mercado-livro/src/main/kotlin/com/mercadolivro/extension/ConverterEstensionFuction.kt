@@ -8,8 +8,8 @@ import com.mercadolivro.controller.request.PutCustomerRequest
 import com.mercadolivro.enums.BookStatus
 import com.mercadolivro.enums.CustomerStatus
 import com.mercadolivro.model.BookModel
-import com.mercadolivro.response.BookResponse
-import com.mercadolivro.response.CustomerResponse
+import com.mercadolivro.controller.response.BookResponse
+import com.mercadolivro.controller.response.CustomerResponse
 
 fun PostCustomerRequest.toCustomerModel() : CustomerModel {
     return CustomerModel(name = this.name, email = this.email, status = CustomerStatus.ATIVO)

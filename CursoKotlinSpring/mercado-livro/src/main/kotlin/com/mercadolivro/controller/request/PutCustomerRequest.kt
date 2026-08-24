@@ -1,3 +1,14 @@
 package com.mercadolivro.controller.request
 
-data class PutCustomerRequest (var name: String, var email: String)
+import jakarta.validation.constraints.Email
+import jakarta.validation.constraints.NotEmpty
+
+data class PutCustomerRequest (
+
+    @field:NotEmpty(message = "Nome deve ser informado")
+    var name: String,
+
+    @field:NotEmpty(message = "E-mail deve ser informado")
+    @field:Email(message = "E-mail deve ser válido")
+    var email: String
+)

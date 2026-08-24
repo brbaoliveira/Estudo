@@ -1,13 +1,10 @@
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/mercadoLivro?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/mercadolivro?createDatabaseIfNotExist=true
     username: root
     password: root
-
-    flyway:
-      enabled: true
-      locations: classpath:db/migration
-
-      jpa:
-        hibernate:
-          ddl-auto: validate
+  jackson:
+    default-property-inclusion: non_null

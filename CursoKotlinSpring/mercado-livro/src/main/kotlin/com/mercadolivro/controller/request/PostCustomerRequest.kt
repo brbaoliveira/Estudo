@@ -1,7 +1,17 @@
 package com.mercadolivro.controller.request
 
-data class PostCustomerRequest (var name: String, var email: String) {
-    /*fun toCustomerModel(): CustomerModel {
-        return CustomerModel(nome = this.nome, email = this.email)
-    }*/
-}
+import com.mercadolivro.validation.EmailAvailable
+import jakarta.validation.constraints.Email
+import jakarta.validation.constraints.NotEmpty
+
+
+data class PostCustomerRequest (
+
+    @field:NotEmpty(message = "Nome deve ser informado")
+    var name: String,
+
+    @field:NotEmpty(message = "E-mail deve ser informado")
+    @field:Email(message = "E-mail deve ser válido")
+    @EmailAvailable
+    var email: String
+)

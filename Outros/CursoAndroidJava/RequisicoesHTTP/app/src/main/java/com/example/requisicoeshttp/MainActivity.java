@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Foto> listaFotos = new ArrayList<>();
     private ProgressBar progressBar;
+    private DataService service;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +65,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
 
-
-
-
         retrofit = new Retrofit.Builder()
                 //.baseUrl("https://viacep.com.br/ws/")
                 .baseUrl("https://jsonplaceholder.typicode.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
+        service = retrofit.create(DataService.class);
     }
 
     public void recuperarDados(View v) {
@@ -83,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
 
         //recuperarCEPRetrofit(cep);
         //recuperarListaRetrofit();
-        salvarPostagem();
+        //salvarPostagem();
+        //atualizarPostagem();
+        removerPostagem();
 
         /*MyTask task = new MyTask();
         String urlApi = "https://blockchain.info/latestblock";
@@ -93,12 +96,51 @@ public class MainActivity extends AppCompatActivity {
         task.execute(urlTeste);*/
     }
 
-    public void salvarPostagem() {
+    public void removerPostagem() {
+        Call<Void> call = service.removerPostagem(2);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    tvResultado.setText("Status: " + response.code());
+                }
+            }
 
-        DataService dataService = retrofit.create(DataService.class);
+            @Override
+            public void onFailure(Call<Void> call, Throwable throwable) {
+
+            }
+        });
+    }
+
+    public void atualizarPostagem() {
+        Postagem postagem = new Postagem("1234", null, "Corpo postagem");
+        //Call<Postagem> call = service.atualizarPostagem(2, postagem);
+        Call<Postagem> call = service.atualizarPostagemPatch(2, postagem);
+        call.enqueue(new Callback<Postagem>() {
+            @Override
+            public void onResponse(Call<Postagem> call, Response<Postagem> response) {
+                if (response.isSuccessful()) {
+                    Postagem postagemResposta = response.body();
+                    tvResultado.setText("Código: " + response.code() +
+                            "\nid: " + postagemResposta.getId() +
+                            "\nuserId: " + postagemResposta.getUserId() +
+                            "\ntitulo: " + postagemResposta.getTitle() +
+                            "\nbody: " + postagemResposta.getBody());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Postagem> call, Throwable throwable) {
+
+            }
+        });
+    }
+
+    public void salvarPostagem() {
         Postagem postagem = new Postagem("1234", "Título Postagem!", "Corpo postagem");
-        Call<Postagem> call = dataService.salvarPostagens(postagem);
-       call.enqueue(new Callback<Postagem>() {
+        Call<Postagem> call = service.salvarPostagens(postagem);
+        call.enqueue(new Callback<Postagem>() {
            @Override
            public void onResponse(Call<Postagem> call, Response<Postagem> response) {
                if (response.isSuccessful()) {
@@ -118,9 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void recuperarListaRetrofit() {
         progressBar.setVisibility(View.VISIBLE);
-
-        DataService dataService = retrofit.create(DataService.class);
-        Call<List<Foto>> call = dataService.recuperarFotos();
+        Call<List<Foto>> call = service.recuperarFotos();
         call.enqueue(new Callback<List<Foto>>() {
             @Override
             public void onResponse(Call<List<Foto>> call, Response<List<Foto>> response) {

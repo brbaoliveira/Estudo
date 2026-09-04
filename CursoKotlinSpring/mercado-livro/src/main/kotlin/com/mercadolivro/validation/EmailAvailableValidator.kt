@@ -5,13 +5,10 @@ import jakarta.validation.ConstraintValidator
 import jakarta.validation.ConstraintValidatorContext
 
 class EmailAvailableValidator(var customerService: CustomerService): ConstraintValidator<EmailAvailable, String> {
-    override fun isValid(value: String?, p1: ConstraintValidatorContext?): Boolean {
-        if(value.isNullOrEmpty())
+    override fun isValid(value: String?, context: ConstraintValidatorContext?): Boolean {
+        if (value.isNullOrEmpty()) {
             return false
+        }
         return customerService.emailAvailable(value)
     }
-}
-
-private fun CustomerService.emailAvailable(email: String): Boolean {
-    return !customerRepository.existsByEmail(email)
 }

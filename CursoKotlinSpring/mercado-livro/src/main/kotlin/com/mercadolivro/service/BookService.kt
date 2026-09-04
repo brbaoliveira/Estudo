@@ -27,6 +27,10 @@ class BookService(
         return bookRepository.findByStatus(BookStatus.ATIVO, pageable)
     }
 
+    fun findVendidos(pageable: Pageable): Page<BookModel> {
+        return bookRepository.findByStatus(BookStatus.VENDIDO, pageable)
+    }
+
     fun findById(id: Int): BookModel {
         return bookRepository.findById(id).orElseThrow{ NotFoundException(Errors.ML101.message.format(id), Errors.ML101.code) }
     }

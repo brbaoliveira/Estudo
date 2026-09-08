@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mercadolivroprod?createDatabaseIfNotExist=true
+    username: root
+    password: root
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

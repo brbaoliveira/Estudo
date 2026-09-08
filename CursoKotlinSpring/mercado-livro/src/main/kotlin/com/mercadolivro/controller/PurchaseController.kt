@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("purchase")
+@RequestMapping("purchases")
 class PurchaseController(
     private val purchaseService: PurchaseService,
     private val purchaseMapper: PurchaseMapper

@@ -1,10 +1,12 @@
 spring:
+  profiles:
+    active: dev
   jpa:
     hibernate:
       ddl-auto: update
-  datasource:
-    url: jdbc:mysql://localhost:3306/mercadolivro?createDatabaseIfNotExist=true
-    username: root
-    password: root
   jackson:
     default-property-inclusion: non_null
+
+jwt:
+  secret: minha-chave-secreta-do-mercado-livro-para-jwt-hs-896f489f-dcf2-4561-b3fc-4d2fe201cf16
+  expiration: 999999

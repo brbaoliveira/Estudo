@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: kontrol-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: kontrol
+      MYSQL_USER: kontrol
+      MYSQL_PASSWORD: kontrol
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - kontrol_mysql_data:/var/lib/mysql
+volumes:
+  kontrol_mysql_data:

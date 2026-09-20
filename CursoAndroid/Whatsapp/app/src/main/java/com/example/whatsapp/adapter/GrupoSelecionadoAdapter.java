@@ -1,0 +1,69 @@
+package com.example.whatsapp.adapter;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.whatsapp.R;
+import com.example.whatsapp.helper.Base64Custom;
+import com.example.whatsapp.model.Usuario;
+
+import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class GrupoSelecionadoAdapter extends RecyclerView.Adapter<GrupoSelecionadoAdapter.MyViewHolder> {
+
+    private List<Usuario> contatosSelecionados;
+    private Context context;
+    public GrupoSelecionadoAdapter(List<Usuario> listaContatos, Context c) {
+        this.contatosSelecionados = listaContatos;
+        this.context = c;
+    }
+
+    @NonNull
+    @Override
+    public GrupoSelecionadoAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_grupo_selecionado, parent, false);
+
+        return new GrupoSelecionadoAdapter.MyViewHolder(itemLista);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull GrupoSelecionadoAdapter.MyViewHolder holder, int position) {
+        Usuario usuario = contatosSelecionados.get(position);
+        holder.nome.setText(usuario.getNome());
+        Log.d("FOTO", "Foto: " + usuario.getFotoPerfil());
+
+        if (usuario.getFotoPerfil() != null && !usuario.getFotoPerfil().isEmpty()) {
+            Bitmap bitmap = Base64Custom.decodificarBase64Imagem(usuario.getFotoPerfil());
+            holder.foto.setImageBitmap(bitmap);
+            Log.d("FOTO", "Foto: " + usuario.getFotoPerfil());
+
+        } else {
+            holder.foto.setImageResource(R.drawable.padrao);
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return contatosSelecionados.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+        CircleImageView foto;
+        TextView nome;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            foto = itemView.findViewById(R.id.imageViewFotoMembroSelecionado);
+            nome = itemView.findViewById(R.id.textNomeMembroSelecionado);
+        }
+    }
+}

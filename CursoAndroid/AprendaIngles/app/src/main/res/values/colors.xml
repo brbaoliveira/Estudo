@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#6B420B</color>
+    <color name="colorAccent">#806233</color>
+    <color name="colorPrimaryDark">#4D3108</color>
+    <color name="corFundo">#8F7253</color>
+    <color name="fundoBichos">#F5E9B9</color>
+
+</resources>

@@ -3,3 +3,7 @@ Versão → 1
 Data → 19/08/2026
 Alterações → Primeira versão → adicionando arquivos de cursos do computador 
 -----------------------------------------------------------------------------------
+Versão → 2
+Data → 20/09/2026
+Alterações → Adicionando arquivos de cursos do notebook
+-----------------------------------------------------------------------------------

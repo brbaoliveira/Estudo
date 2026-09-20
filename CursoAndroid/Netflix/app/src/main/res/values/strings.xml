@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Netflix</string>
+    <string name="nome_episoio1">House of Cards</string>
+    <string name="episodio1">S1:E2</string>
+    <string name="menu_mensagem">Menu mensagem</string>
+    <string name="menu_volume">Menu Volume</string>
+    <string name="menu_favoritos">Menu favoritos</string>
+    <string name="menu_episodios">Menu episodios</string>
+    <string name="tempo_atual1">01:30</string>
+    <string name="tempo_restante1">42:20</string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "107168544270",
+    "project_id": "organize-2a98b",
+    "storage_bucket": "organize-2a98b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107168544270:android:25eb508d7ae3b72a7e2e5f",
+        "android_client_info": {
+          "package_name": "com.example.organize"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA19XkO5L-anporT5uNtI-0Dv9vQ9LDUF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

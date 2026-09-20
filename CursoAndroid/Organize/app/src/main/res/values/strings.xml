@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Organizze</string>
+    <string name="intro_1">Organize suas contas\n de onde estiver</string>
+    <string name="intro_1sub">Simples, fácil de usar e gratis</string>
+
+    <string name="intro_2">Saiba para onde está indo seu dinheiro</string>
+    <string name="intro_2sub">Categorizando seus lançamentos e  vendo o\n destino de cada centavo</string>
+
+    <string name="intro_3">Nunca mais esqueça de\n pagar uma conta</string>
+    <string name="intro_3sub">Receba alertas quando quiser</string>
+
+    <string name="intro_4">Tudo organizado no\n celular ou computador</string>
+    <string name="intro_4sub">Use no seu smartphone e acessando o\n Organizze pelo site</string>
+
+    <string name="intro_cadastro">Crie uma conta grátis</string>
+    <string name="intro_cadastro_sub">Junte-se a mais de meio milhão\n de pessoas e comece já</string>
+    <string name="btn_cadastro">Cadastre-se</string>
+    <string name="intro_cadastro_login">Já tenho conta</string>
+    <string name="cadastro_titulo">Crie sua conta grátis</string>
+    <string name="cadastro_hintNome">Nome</string>
+    <string name="cadastro_hintEmail">E-mail</string>
+    <string name="cadastro_hintSenha">Senha</string>
+    <string name="cadastro_bt">Cadastrar</string>
+    <string name="cadastro_termos">Termos de uso</string>
+    <string name="login_bt">Entrar</string>
+    <string name="login_titulo">Acesse sua conta</string>
+    <string name="login_cad1">Não é cadastrado?</string>
+    <string name="cadastro_login">Login</string>
+    <string name="cadastro_log1">Já possuí cadastro?</string>
+
+    <string name="receita_hintData">Data (ex:19/10/2025)</string>
+    <string name="receita_hintCategoria">Categoria (ex:salário)</string>
+    <string name="receita_hintDescrição">Descrição (ex: salário mensal)</string>
+
+
+</resources>

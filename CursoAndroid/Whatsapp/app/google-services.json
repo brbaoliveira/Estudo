@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "335933727730",
+    "project_id": "whatsapp-60783",
+    "storage_bucket": "whatsapp-60783.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335933727730:android:346995fdbc99a7acfd416b",
+        "android_client_info": {
+          "package_name": "com.example.whatsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9-giPG5Lz8eqsxHCMHpzI6ea5qt2t7G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

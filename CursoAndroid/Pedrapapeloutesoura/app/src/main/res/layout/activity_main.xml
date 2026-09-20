@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/text12"
+        android:textColor="@color/cinza"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageResultado"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/exibeSuaEscolha"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/botao_normal" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/text1"
+        android:textColor="@color/cinza"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/text12"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/exibeSuaEscolha"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/text12"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageResultado"
+        app:layout_constraintStart_toStartOf="@+id/text12"
+        app:layout_constraintTop_toBottomOf="@+id/text12"
+        app:srcCompat="@drawable/botao_normal" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text2"
+        android:textColor="@color/cinza"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exibeResultado" />
+
+    <ImageView
+        android:id="@+id/selecionadoPedra"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/botao_normal"
+        android:onClick="selecionadoPedra"
+        app:layout_constraintEnd_toStartOf="@+id/selecionadoPapel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/pedra2" />
+
+    <ImageView
+        android:id="@+id/selecionadoPapel"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/botao_normal"
+        android:onClick="selecionadoPapel"
+        app:layout_constraintBottom_toBottomOf="@+id/selecionadoPedra"
+        app:layout_constraintEnd_toStartOf="@+id/selecionadoTesoura"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/selecionadoPedra"
+        app:layout_constraintTop_toTopOf="@+id/selecionadoPedra"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/papel2" />
+
+    <ImageView
+        android:id="@+id/selecionadoTesoura"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/botao_normal"
+        android:onClick="selecionadoTesoura"
+        app:layout_constraintBottom_toBottomOf="@+id/selecionadoPapel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/selecionadoPapel"
+        app:layout_constraintTop_toTopOf="@+id/selecionadoPapel"
+        app:srcCompat="@drawable/tesoura2" />
+
+    <TextView
+        android:id="@+id/exibeResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exibeSuaEscolha"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/exibePontosApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageResultado"
+        app:layout_constraintStart_toStartOf="@+id/imageResultado"
+        app:layout_constraintTop_toBottomOf="@+id/imageResultado" />
+
+    <TextView
+        android:id="@+id/exibePontosUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/exibeSuaEscolha"
+        app:layout_constraintStart_toStartOf="@+id/exibeSuaEscolha"
+        app:layout_constraintTop_toBottomOf="@+id/exibeSuaEscolha" />
+
+    <Button
+        android:id="@+id/resetar"
+        style="@style/botoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/botao_selecionado"
+        android:onClick="resetar"
+        android:text="@string/reiniciar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selecionadoPapel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Abas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home">Home</string>
+    <string name="inscricoes">Inscrições</string>
+    <string name="emAlta">Em alta</string>
+</resources>

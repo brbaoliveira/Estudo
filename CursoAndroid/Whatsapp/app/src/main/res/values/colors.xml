@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#01755f</color>
+    <color name="colorPrimaryDark">#055141</color>
+    <color name="colorAccent">#2cab1b</color>
+    <color name="cinza_claro">#EEEEEE</color>
+    <color name="balaoRemetente">#DBF9C4</color>
+    <color name="cinza">#676767</color>
+</resources>

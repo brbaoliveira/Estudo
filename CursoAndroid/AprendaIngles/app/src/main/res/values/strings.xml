@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Aprenda Inglês</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="bichos">Bichos</string>
+    <string name="numeros">Numeros</string>
+    <string name="vogais">Vogais</string>
+
+    <string name="dog">Cachorro → Dog</string>
+    <string name="cat">Gato → Cat</string>
+    <string name="lion">Leão → Lion</string>
+    <string name="monkey">Macaco → Monkey</string>
+    <string name="shep">Ovelha → Sheep</string>
+    <string name="cow">Vaca → Cow</string>
+
+    <string name="one">Um → One</string>
+    <string name="two">Dois → Two</string>
+    <string name="three">Três → Three</string>
+    <string name="four">Quatro → Four</string>
+    <string name="five">Cinco → Five</string>
+    <string name="six">Seis → Six</string>
+</resources>

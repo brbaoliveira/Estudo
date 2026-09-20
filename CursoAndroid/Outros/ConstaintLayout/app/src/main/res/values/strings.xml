@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Constaint Layout</string>
+    <string name="into_anterior">Anterior</string>
+    <string name="into_posterior">Posterior</string>
+    <string name="into_titulo">Aprenda sobre edição de imagens</string>
+    <string name="into_texto">Imagens no Android são recursos colocados na pasta drawable, usadas para ícones, botões, fundos e elementos gráficos da interface. Elas podem ser PNG, JPG ou vetoriais (SVG/Vector Drawable), sendo que vetores são preferidos por manterem qualidade em qualquer resolução. O Android escolhe automaticamente a melhor versão da imagem conforme a densidade da tela. Esses recursos são acessados no app usando R.drawable.nomeDaImagem.</string>
+    <string name="into_data">24/11/2025</string>
+</resources>

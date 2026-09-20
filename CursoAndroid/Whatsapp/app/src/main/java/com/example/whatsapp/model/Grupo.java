@@ -1,0 +1,68 @@
+package com.example.whatsapp.model;
+
+import com.example.whatsapp.config.ConfiguracaoFirebase;
+import com.example.whatsapp.helper.Base64Custom;
+import com.google.firebase.database.DatabaseReference;
+
+import java.io.Serializable;
+import java.util.List;
+
+public class Grupo implements Serializable {
+    private String id, nome, fotoPerfil, membro;
+    private List<Usuario> membros;
+
+    public Grupo() {
+        DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference grupoRef = database.child("grupos");
+        String idGrupoFirebase = grupoRef.push().getKey();
+        setId(idGrupoFirebase);
+    }
+    public void salvar(){
+        DatabaseReference database = ConfiguracaoFirebase.getFirebaseDatabase();
+        DatabaseReference grupoRef = database.child("grupos");
+        grupoRef.child(getId()).setValue(this);
+        for(Usuario membro: getMembros()){
+            String idRemetente = Base64Custom.codificarBase64(membro.getEmail());
+            String idDestinatario = getId();
+            Mensagem mensagem = new Mensagem();
+            Conversa conversa = new Conversa();
+            conversa.setIdRemetente(idRemetente);
+            conversa.setIdDestinatario(idDestinatario);
+            conversa.setUltimaMensagem(mensagem.getMensagem());
+            conversa.setIsGroup("true");
+            conversa.setGrupo(this);
+            conversa.salvar();
+        }
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getFotoPerfil() {
+        return fotoPerfil;
+    }
+    public void setFotoPerfil(String fotoPerfil) {
+        this.fotoPerfil = fotoPerfil;
+    }
+   /* public String getMembro() {
+        return membro;
+    }
+    public void setMembro(String membro) {
+        this.membro = membro;
+    }*/
+    public List<Usuario> getMembros() {
+        return membros;
+    }
+    public void setMembros(List<Usuario> membros) {
+        this.membros = membros;
+    }
+}

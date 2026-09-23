@@ -8,5 +8,8 @@ import org.springframework.http.HttpStatus
 
 @Component
 class CurrentUser(private val users:UserRepository){
- fun get():User{val email=SecurityContextHolder.getContext().authentication?.name?:throw ResponseStatusException(HttpStatus.UNAUTHORIZED);return users.findByEmail(email)?:throw ResponseStatusException(HttpStatus.UNAUTHORIZED)}
+ fun get():User{
+     val email = SecurityContextHolder.getContext().authentication?.name ?: throw ResponseStatusException(HttpStatus.UNAUTHORIZED)
+     return users.findByEmail(email) ?: throw ResponseStatusException(HttpStatus.UNAUTHORIZED)
+ }
 }
